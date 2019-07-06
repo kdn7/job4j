@@ -5,8 +5,18 @@ import org.junit.Test;
 import static org.hamcrest.number.IsCloseTo.closeTo;
 import static org.junit.Assert.assertThat;
 
+/**
+ * Test.
+ *
+ * @author Калугин Дмитрий (kdn7777777@gmail.com)
+ * @version 1
+ * @since 06.07.2019
+ */
 public class FitTest {
 
+    /**
+     * Test
+     */
     @Test
     public void manWeight() {
         Fit fit = new Fit();
@@ -14,6 +24,9 @@ public class FitTest {
         assertThat(weight, closeTo(92.0, 0.1));
     }
 
+    /**
+     * Test
+     */
     @Test
     public void womanWeight() {
         Fit fit = new Fit();
