@@ -28,6 +28,41 @@ public class BoardTest {
                 String.format("X X%s X %sX X%s", ln, ln, ln)
                 )
         );
+    }/**
+     * Тест
+     * Проверяется доска шириной 4 клеки и высотой 3 клетки.
+     * Вывод должен соответствовать:
+     * Х Х
+     *  Х X
+     * Х X
+     */
+    @Test
+    public void when4x3() {
+        Board board = new Board();
+        String rsl = board.paint(4, 3);
+        String ln = System.lineSeparator();
+        assertThat(rsl, is(
+                String.format("X X %s X X%sX X %s", ln, ln, ln)
+                )
+        );
+    }/**
+     * Тест
+     * Проверяется доска шириной 3 клетки и высотой 4 клетки.
+     * Вывод должен соответствовать:
+     * Х Х
+     *  Х
+     * Х Х
+     *  X
+     */
+    @Test
+    public void when3x4() {
+        Board board = new Board();
+        String rsl = board.paint(3, 4);
+        String ln = System.lineSeparator();
+        assertThat(rsl, is(
+                String.format("X X%s X %sX X%s X %s", ln, ln, ln, ln)
+                )
+        );
     }
     /**
      * Тест
