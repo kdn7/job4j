@@ -79,7 +79,7 @@ public class MatrixCheckTest {
      * Матрица х2 вернет ложь.
      */
     @Test
-    public void whenDataNotMonoByTwoEementThenFalse() {
+    public void whenDataNotMonoByTwoElementThenFalse() {
         MatrixCheck check = new MatrixCheck();
         boolean[][] input = new boolean[][] {
                 {true, true},
@@ -87,5 +87,85 @@ public class MatrixCheckTest {
         };
         boolean result = check.mono(input);
         assertThat(result, is(false));
+    }
+
+    /**
+     * Тест.
+     * Матрица х3 вернет ложь.
+     */
+    @Test
+    public void whenDataNotMonoByTrueThenFalse2() {
+        MatrixCheck check = new MatrixCheck();
+        boolean[][] input = new boolean[][] {
+                {true, true, false},
+                {true, true, true},
+                {true, true, true}
+        };
+        boolean result = check.mono(input);
+        assertThat(result, is(false));
+    }
+
+    /**
+     * Тест.
+     * Матрица х3 вернет ложь.
+     */
+    @Test
+    public void whenDataNotMonoByTrueThenFalse3() {
+        MatrixCheck check = new MatrixCheck();
+        boolean[][] input = new boolean[][] {
+                {true, true, true},
+                {true, true, true},
+                {true, true, false}
+        };
+        boolean result = check.mono(input);
+        assertThat(result, is(false));
+    }
+
+    /**
+     * Тест.
+     * Матрица х3 вернет ложь.
+     */
+    @Test
+    public void whenDataNotMonoByTrueThenFalse4() {
+        MatrixCheck check = new MatrixCheck();
+        boolean[][] input = new boolean[][] {
+                {true, true, true},
+                {true, true, true},
+                {false, true, true}
+        };
+        boolean result = check.mono(input);
+        assertThat(result, is(false));
+    }
+
+    /**
+     * Тест.
+     * Матрица х3 вернет ложь.
+     */
+    @Test
+    public void whenDataNotMonoByTrueThenFalse5() {
+        MatrixCheck check = new MatrixCheck();
+        boolean[][] input = new boolean[][] {
+                {false, true, true},
+                {true, true, true},
+                {true, true, true}
+        };
+        boolean result = check.mono(input);
+        assertThat(result, is(false));
+    }
+
+    /**
+     * Тест.
+     * Матрица х3 вернет истину.
+     */
+    @Test
+    public void whenDataNotMonoByTrueThenFalse6() {
+        MatrixCheck check = new MatrixCheck();
+        boolean[][] input = new boolean[][] {
+                {true, false, true},
+                {false, true, false},
+                {true, false, true}
+        };
+        boolean result = check.mono(input);
+        assertThat(result, is(true));
     }
 }

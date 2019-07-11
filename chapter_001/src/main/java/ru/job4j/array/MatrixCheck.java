@@ -11,9 +11,9 @@ public class MatrixCheck {
      * @return true если значения равны, false - нет.
      */
     public boolean mono(boolean[][] data) {
-        for (int i = 0; i < data.length - 1; i++) {
+        for (int i = 1; i < data.length; i++) {
             if (data[0][0] != data[i][i]) return false;
-            if (data[data.length - 1][data.length - 1] != data[data.length - 2 - i][data.length - 2 - i]) return false;
+            if (data[0][data.length - 1] != data[i][data.length - 1 - i]) return false;
         }
         return true;
     }
