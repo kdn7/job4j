@@ -6,6 +6,22 @@ package ru.job4j.condition;
  * @author Дмитрий Калугин (kdn7777777@gmail.com).
  */
 public class Triangle {
+    Point point1, point2, point3; //координаты вершин.
+    double a, b, c; //длины сторон.
+
+    /**
+     * Конструктор треугольника по вершинам.
+     * @param point1 вершина 1.
+     * @param point2 вершина 2.
+     * @param point3 вершина 3.
+     */
+    public Triangle (Point point1, Point point2, Point point3) {
+        if (this.calcSideLength(point1, point2, point3)) {
+            this.point1 = point1;
+            this.point2 = point2;
+            this.point3 = point3;
+        } else System.out.println("Треугольник с заданными координатами не существует");
+    }
 
     /**
      * Метод вычисления полупериметра по длинам сторон.
@@ -21,6 +37,26 @@ public class Triangle {
      */
     public double period(double a, double b, double c) {
         return (a + b + c) / 2;
+    }
+
+    /**
+     * Метод расчета длин сторон треугольника.
+     * @param point1 вершина1.
+     * @param point2 вершина2.
+     * @param point3 вершина3.
+     * @return true - значения присвоены. false - треугольник не может быть построет так как одна из сторон длиннее
+     * суммы двух других.
+     */
+    private boolean calcSideLength (Point point1, Point point2, Point point3) {
+        double a = point1.distance(point2);
+        double b = point2.distance(point3);
+        double c = point1.distance(point3);
+        if (this.exist(a, b, c)) {
+            this.a = a;
+            this.b = b;
+            this.c = c;
+            return true;
+        } else return false;
     }
 
     /**
@@ -46,15 +82,8 @@ public class Triangle {
      *
      * @return Вернуть площадь, если треугольник существует или -1.
      */
-    public double area(int x1, int y1, int x2, int y2, int x3, int y3) {
-        double rsl = -1;
-        double a = new Point().distance(x1, y1, x2, y2);
-        double b = new Point().distance(x2, y2, x3, y3);
-        double c = new Point().distance(x1, y1, x3, y3);
-        if (this.exist(a, b, c)) {
-            double p = period(a, b, c);
-            rsl = Math.sqrt(p * (p - a) * (p - b) * (p - c));
-        }
-        return rsl;
+    public double area() {
+        double p = period(a, b, c);
+        return Math.sqrt(p * (p - a) * (p - b) * (p - c));
     }
 }
