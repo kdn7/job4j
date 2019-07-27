@@ -11,6 +11,7 @@ public class Point {
 
     private final int x;
     private final int y;
+    private int z;
 
     /**
      * @param first координата x
@@ -22,12 +23,32 @@ public class Point {
     }
 
     /**
+     * @param x координата x.
+     * @param y координата y.
+     * @param z координата z.
+     */
+    public Point(int x, int y, int z) {
+        this.x = x;
+        this.y = y;
+        this.z = z;
+    }
+
+    /**
      * Метод рассчитывает расстояние между до другой точки.
      * @param that точка, до которой нужно посчитать расстояние.
      * @return расстояние.
      */
     public double distance(Point that) {
         return sqrt(pow(this.x - that.x, 2) + pow(this.y - that.y, 2));
+    }
+
+    /**
+     * Метод рассчитывает расстояние между до другой точки в трехмерном пространстве.
+     * @param that точка, до которой нужно посчитать расстояние.
+     * @return расстояние.
+     */
+    public double distance3d(Point that) {
+        return sqrt(pow(this.x - that.x, 2) + pow(this.y - that.y, 2) + pow(this.z - that.z, 2));
     }
 
     /**
