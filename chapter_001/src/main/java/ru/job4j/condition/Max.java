@@ -17,4 +17,12 @@ public class Max {
     public int max(int left, int right) {
         return left > right ? left : right;
     }
+
+    public int max(int num1, int num2, int num3) {
+        return max(num1, max(num2, num3));
+    }
+
+    public int max(int num1, int num2, int num3, int num4) {
+        return max(num1, max(num2, num3, num4));
+    }
 }
