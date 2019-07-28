@@ -18,10 +18,25 @@ public class Max {
         return left > right ? left : right;
     }
 
+    /**
+     * Метод определения максимального из трех чисел.
+     * @param num1 первое число.
+     * @param num2 второе число.
+     * @param num3 третье число.
+     * @return максимальное из заданных чисел.
+     */
     public int max(int num1, int num2, int num3) {
         return max(num1, max(num2, num3));
     }
 
+    /**
+     * Метод определения максимального из четырех чисел.
+     * @param num1 первое число.
+     * @param num2 второе число.
+     * @param num3 третье число.
+     * @param num4 четвертое число.
+     * @return максимальное из заданных чисел.
+     */
     public int max(int num1, int num2, int num3, int num4) {
         return max(num1, max(num2, num3, num4));
     }
